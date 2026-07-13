@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const CONTACT_EMAIL = "hello@persimmon-clinical.com";
 
-type Status = "idle" | "submitting" | "success" | "emailDraft";
+type Status = "idle" | "submitting" | "success" | "error";
 
 const fieldClasses =
   "w-full rounded-md border border-neutral-100 bg-neutral-0 px-4 py-2.5 font-body text-apricot-900 placeholder:text-apricot-900/40 focus:border-apricot-500 focus:outline-none focus:ring-2 focus:ring-apricot-300";
@@ -22,8 +22,6 @@ export default function ContactForm() {
     const data = Object.fromEntries(new FormData(form).entries());
 
     try {
-      // If a server-side email integration is configured (FORMSPREE_ENDPOINT),
-      // this sends the request silently and we show a success message.
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -35,35 +33,22 @@ export default function ContactForm() {
       setStatus("success");
       form.reset();
     } catch {
-      // Default behavior with no server integration: open the visitor's email
-      // client with a fully pre-filled message to our team — they just review
-      // and hit send. Nothing is ever lost.
-      const subject = encodeURIComponent(
-        "Request Demo — Persimmon Care Network",
-      );
-      const body = encodeURIComponent(
-        [
-          "Hello Persimmon Care Network team,",
-          "",
-          "I'd like to learn more. Here are my details:",
-          "",
-          `Name: ${data.name ?? ""}`,
-          `Email: ${data.email ?? ""}`,
-          `Cell Phone: ${data.phone ?? ""}`,
-          `Interested in: ${data.interest ?? ""}`,
-          `How I heard about you: ${data.source ?? ""}`,
-          `Role: ${data.role ?? ""}`,
-          "",
-          "Thank you!",
-        ].join("\n"),
-      );
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-      setStatus("emailDraft");
+      setStatus("error");
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-5" noValidate>
+      {/* Honeypot: hidden from people, tempting to bots. */}
+      <input
+        type="text"
+        name="company_website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClasses}>
@@ -93,59 +78,40 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="phone" className={labelClasses}>
-          Cell Phone
-        </label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          autoComplete="tel"
-          className={fieldClasses}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="interest" className={labelClasses}>
-          I&apos;m interested to learn more about…
-        </label>
-        <input
-          id="interest"
-          name="interest"
-          type="text"
-          className={fieldClasses}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="source" className={labelClasses}>
-          How did you hear about us?
-        </label>
-        <select id="source" name="source" className={fieldClasses} defaultValue="">
-          <option value="" disabled>
-            Select an option
-          </option>
-          <option>Referral from a colleague</option>
-          <option>Conference or event</option>
-          <option>Search engine</option>
-          <option>Social media</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="role" className={labelClasses}>
-          Which best describes your role?
-        </label>
-        <select id="role" name="role" className={fieldClasses} defaultValue="">
-          <option value="" disabled>
-            Select an option
-          </option>
-          <option>Provider</option>
-          <option>Practice Administrator</option>
-          <option>Other</option>
-        </select>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="role" className={labelClasses}>
+            Role
+          </label>
+          <select
+            id="role"
+            name="role"
+            required
+            className={fieldClasses}
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Select an option
+            </option>
+            <option>Patient</option>
+            <option>Provider</option>
+            <option>Administrator</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="organization" className={labelClasses}>
+            Organization
+          </label>
+          <input
+            id="organization"
+            name="organization"
+            type="text"
+            autoComplete="organization"
+            placeholder="Practice, hospital, or clinic"
+            className={fieldClasses}
+          />
+        </div>
       </div>
 
       <div>
@@ -163,10 +129,13 @@ export default function ContactForm() {
           Thank you — we&apos;ve received your request and will be in touch shortly.
         </p>
       )}
-      {status === "emailDraft" && (
-        <p className="font-body text-denim-600" role="status">
-          We&apos;ve opened a pre-filled email to our team — just review and press
-          send, and we&apos;ll be in touch shortly.
+      {status === "error" && (
+        <p className="font-body text-apricot-700" role="status">
+          Something went wrong. Please email us directly at{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+            {CONTACT_EMAIL}
+          </a>
+          .
         </p>
       )}
     </form>

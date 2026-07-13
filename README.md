@@ -61,24 +61,26 @@ The two **"Schedule an Intro Call"** CTAs currently anchor to the contact form
 `CtaButton` is used in [`app/page.tsx`](./app/page.tsx) (see the `TODO` in
 [`components/CtaButton.tsx`](./components/CtaButton.tsx)).
 
-### Contact form endpoint
+### Contact form email delivery
 
-The Request Demo form posts to [`app/api/contact/route.ts`](./app/api/contact/route.ts),
-which forwards to a [Formspree](https://formspree.io) endpoint. Submissions are
-destined for **hello@persimmon-clinical.com**.
+The Request Demo form (fields: Name, Email, Role, Organization) posts to
+[`app/api/contact/route.ts`](./app/api/contact/route.ts), which emails each
+submission **silently** to **hello@persimmon-clinical.com** — the visitor just
+presses Submit; no email client opens on their side.
 
-1. Create a Formspree form pointed at `hello@persimmon-clinical.com`.
-2. Set the environment variable (see [`.env.example`](./.env.example)):
-   ```
-   FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxx
-   ```
-   Locally: copy `.env.example` to `.env.local` and fill it in.
-   On Vercel: Project → Settings → Environment Variables.
+Configure **one** provider (see [`.env.example`](./.env.example)):
 
-If `FORMSPREE_ENDPOINT` is unset, the form **falls back to a `mailto:` link**
-to `hello@persimmon-clinical.com`, so nothing breaks on deploy.
+- **Web3Forms (no account, recommended):** create an Access Key at
+  [web3forms.com](https://web3forms.com) for `hello@persimmon-clinical.com`,
+  then set `WEB3FORMS_ACCESS_KEY`.
+- **Formspree:** create a form pointed at `hello@persimmon-clinical.com`, then
+  set `FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxx`.
 
-The newsletter subscribe box in the footer uses the same `mailto:` fallback —
+Set it locally by copying `.env.example` to `.env.local`, or on Vercel under
+Project → Settings → Environment Variables. Until one is configured, the form
+shows a "please email us directly" message with a `mailto:` link.
+
+The newsletter subscribe box in the footer still uses a `mailto:` fallback —
 wire it to your email service provider when ready
 ([`components/Footer.tsx`](./components/Footer.tsx)).
 
@@ -87,7 +89,8 @@ wire it to your email service provider when ready
 1. Push this repository to GitHub.
 2. In [Vercel](https://vercel.com/), **Add New → Project** and import the repo.
    Vercel auto-detects Next.js — no configuration needed.
-3. (Optional) Add the `FORMSPREE_ENDPOINT` environment variable.
+3. (Optional) Add the `WEB3FORMS_ACCESS_KEY` (or `FORMSPREE_ENDPOINT`)
+   environment variable to enable contact-form email delivery.
 4. Deploy.
 
 Or from the CLI:

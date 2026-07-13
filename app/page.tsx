@@ -106,7 +106,7 @@ export default function Home() {
               Concierge Diabetes Care
             </h1>
             <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-apricot-900/80 sm:text-2xl">
-              Creating value for you and your patients.
+              Give your patients comprehensive diabetes care.
             </p>
             <div className="mt-10">
               <CtaButton href="#contact">Schedule an Intro Call</CtaButton>

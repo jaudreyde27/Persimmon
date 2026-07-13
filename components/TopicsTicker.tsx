@@ -30,15 +30,18 @@ function PlateIcon({ className }: IconProps) {
   );
 }
 
-/* 3 — Pump tech: handheld device with screen, buttons and tubing */
+/* 3 — Pump tech: insulin pump with tubing running to an infusion site */
 function PumpIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...strokeProps}>
-      <rect x="6.5" y="3" width="9" height="13" rx="2" />
-      <rect x="8.5" y="5" width="5" height="3.5" rx="0.6" />
-      <circle cx="9.6" cy="12.5" r="0.9" />
-      <circle cx="12.4" cy="12.5" r="0.9" />
-      <path d="M15.5 8.5c2.5.5 3.2 3 1.8 5.2-.8 1.3-.6 2.6.7 3.3" />
+      <rect x="5.5" y="2.5" width="8" height="11.5" rx="1.8" />
+      <line x1="7.5" y1="5" x2="11.5" y2="5" />
+      <line x1="7.5" y1="7" x2="11.5" y2="7" />
+      <circle cx="8.5" cy="10.8" r="0.9" />
+      <circle cx="11" cy="10.8" r="0.9" />
+      <path d="M9.5 14c0 3 2.3 4.6 5.5 5" />
+      <circle cx="16.5" cy="19.4" r="1.6" />
+      <circle cx="16.5" cy="19.4" r="0.35" fill="currentColor" stroke="none" />
     </svg>
   );
 }
@@ -105,16 +108,16 @@ function BalanceScaleIcon({ className }: IconProps) {
   );
 }
 
-/* 9 — Moms-to-be: pregnant profile with a heart */
-function PregnantIcon({ className }: IconProps) {
+/* 9 — Moms-to-be: baby onesie */
+function OnesieIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...strokeProps}>
-      <circle cx="9.5" cy="4.2" r="1.8" />
-      <path d="M9.5 6.2v3.4" />
-      <path d="M9.5 9.6c2.6 0 4.4 1.6 4.4 3.6s-1.8 3.4-4.4 3.4" />
-      <path d="M9.5 9.6V17" />
-      <path d="M8 17l-1 4M11 17l1 4" />
-      <path d="M13.4 7c-.6-.7-1.6-.4-1.6.4 0 .7.8 1.2 1.6 1.9.8-.7 1.6-1.2 1.6-1.9 0-.8-1-1.1-1.6-.4z" />
+      <path d="M9.5 4a2.5 2.5 0 0 0 5 0" />
+      <path d="M9.5 4 6 5.6l1.2 2.4 2.3-1.1" />
+      <path d="M14.5 4 18 5.6l-1.2 2.4-2.3-1.1" />
+      <path d="M9.5 6.9v8.5c0 1.1.7 1.9 1.6 2.2l.9.3.9-.3c.9-.3 1.6-1.1 1.6-2.2V6.9" />
+      <circle cx="12" cy="14.3" r="0.35" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="15.9" r="0.35" fill="currentColor" stroke="none" />
     </svg>
   );
 }
@@ -141,8 +144,8 @@ const topics = [
   { label: "Diabetes distress & mental health support", Icon: MindHeartIcon },
   { label: "Life changes and new routines", Icon: CalendarIcon },
   { label: "Collaborative support following hypos", Icon: ChatHypoIcon },
-  { label: "Balancing exercise, sleep & stress w/ Diabetes", Icon: BalanceScaleIcon },
-  { label: "Tactical coaching for moms-to-be", Icon: PregnantIcon },
+  { label: "Balancing exercise, sleep & stress w/ diabetes", Icon: BalanceScaleIcon },
+  { label: "Tactical coaching for moms-to-be", Icon: OnesieIcon },
   { label: "Education for the newly diagnosed", Icon: BookIcon },
 ];
 

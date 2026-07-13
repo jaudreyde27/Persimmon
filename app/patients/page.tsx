@@ -53,7 +53,7 @@ export default function PatientsPage() {
         <section id="contact" className="bg-neutral-25">
           <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
-              Ready to get started? We&apos;d love to hear from you.
+              Want your provider to adopt Persimmon Care? Drop us a note here.
             </h2>
             <div className="mt-10 rounded-2xl border border-neutral-100 bg-neutral-0 p-6 shadow-sm sm:p-10">
               <ContactForm />

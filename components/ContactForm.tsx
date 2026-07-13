@@ -4,6 +4,18 @@ import { useState } from "react";
 
 const CONTACT_EMAIL = "hello@persimmon-clinical.com";
 
+const US_STATES = [
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
+  "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia",
+  "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+  "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
+  "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
+  "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",
+  "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
+  "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
+  "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
+];
+
 type Status = "idle" | "submitting" | "success" | "error";
 
 const fieldClasses =
@@ -13,6 +25,7 @@ const labelClasses =
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [role, setRole] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,6 +45,7 @@ export default function ContactForm() {
 
       setStatus("success");
       form.reset();
+      setRole("");
     } catch {
       setStatus("error");
     }
@@ -88,7 +102,8 @@ export default function ContactForm() {
             name="role"
             required
             className={fieldClasses}
-            defaultValue=""
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
           >
             <option value="" disabled>
               Select an option
@@ -100,18 +115,48 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="organization" className={labelClasses}>
-            Organization
+          <label htmlFor="state" className={labelClasses}>
+            State
+          </label>
+          <select id="state" name="state" className={fieldClasses} defaultValue="">
+            <option value="" disabled>
+              Select a state
+            </option>
+            {US_STATES.map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      {role === "Patient" && (
+        <div>
+          <label htmlFor="providerName" className={labelClasses}>
+            Your provider&apos;s name
           </label>
           <input
-            id="organization"
-            name="organization"
+            id="providerName"
+            name="providerName"
             type="text"
-            autoComplete="organization"
-            placeholder="Practice, hospital, or clinic"
+            required
+            placeholder="The endocrinologist or OB-GYN you'd like to refer"
             className={fieldClasses}
           />
         </div>
+      )}
+
+      <div>
+        <label htmlFor="organization" className={labelClasses}>
+          Organization
+        </label>
+        <input
+          id="organization"
+          name="organization"
+          type="text"
+          autoComplete="organization"
+          placeholder="Practice, hospital, or clinic"
+          className={fieldClasses}
+        />
       </div>
 
       <div>

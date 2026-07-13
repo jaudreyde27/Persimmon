@@ -44,7 +44,9 @@ export async function POST(request: Request) {
   const name = String(data.name ?? "").trim();
   const email = String(data.email ?? "").trim();
   const role = String(data.role ?? "").trim();
+  const state = String(data.state ?? "").trim();
   const organization = String(data.organization ?? "").trim();
+  const providerName = String(data.providerName ?? "").trim();
 
   if (!name || !email) {
     return NextResponse.json(
@@ -71,6 +73,8 @@ export async function POST(request: Request) {
           name,
           email,
           role,
+          state,
+          providerName,
           organization,
         }),
       });
@@ -91,6 +95,8 @@ export async function POST(request: Request) {
           name,
           email,
           role,
+          state,
+          providerName,
           organization,
         }),
       });

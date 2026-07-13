@@ -181,9 +181,9 @@ export default function Home() {
         </section>
 
         {/* Section 7 — Closing CTA */}
-        <section className="bg-apricot-900">
+        <section className="bg-apricot-200">
           <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6">
-            <p className="font-body text-3xl font-semibold leading-snug text-neutral-0 sm:text-4xl sm:leading-snug">
+            <p className="font-body text-3xl font-semibold leading-snug text-apricot-900 sm:text-4xl sm:leading-snug">
               Give your patients the attention they deserve, while unlocking
               additional value for your practice.
             </p>

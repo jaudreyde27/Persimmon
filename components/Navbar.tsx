@@ -13,10 +13,10 @@ function ViewToggle({ active }: { active: "patients" | "providers" }) {
     "rounded-full px-4 py-1.5 text-sm font-medium font-heading transition-colors";
   const activeSeg = "bg-apricot-600 text-neutral-0";
   const inactiveSeg =
-    "border border-neutral-0/60 text-neutral-0 hover:bg-neutral-0/10";
+    "border border-apricot-200 text-apricot-900 hover:bg-apricot-100";
 
   return (
-    <div className="inline-flex items-center gap-1 rounded-full border border-neutral-0/25 bg-apricot-900/60 p-1">
+    <div className="inline-flex items-center gap-1 rounded-full border border-apricot-200 bg-apricot-100 p-1">
       <Link
         href="/patients"
         className={`${segment} ${active === "patients" ? activeSeg : inactiveSeg}`}
@@ -57,25 +57,25 @@ export default function Navbar({
   const closeMenu = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-apricot-900 text-neutral-0">
+    <header className="sticky top-0 z-50 border-b border-neutral-100 bg-neutral-0 text-apricot-900 shadow-sm">
       <nav
         className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6"
         aria-label="Primary"
       >
-        <Wordmark variant="dark" />
+        <Wordmark variant="light" />
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-6 md:flex">
           <ViewToggle active={active} />
           <Link
             href={homeHref}
-            className="font-heading text-sm font-medium text-neutral-0 hover:text-apricot-200"
+            className="font-heading text-sm font-medium text-apricot-900 hover:text-apricot-600"
           >
             Home
           </Link>
           <Link
             href={demoHref}
-            className="font-heading text-sm font-medium text-neutral-0 hover:text-apricot-200"
+            className="font-heading text-sm font-medium text-apricot-900 hover:text-apricot-600"
           >
             Request Demo
           </Link>
@@ -84,7 +84,7 @@ export default function Navbar({
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-neutral-0 hover:bg-neutral-0/10 md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-apricot-900 hover:bg-apricot-100 md:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label="Toggle navigation menu"
@@ -120,7 +120,7 @@ export default function Navbar({
       {open && (
         <div
           id="mobile-menu"
-          className="border-t border-neutral-0/15 px-4 pb-4 pt-2 md:hidden"
+          className="border-t border-neutral-100 px-4 pb-4 pt-2 md:hidden"
         >
           <div className="mb-3 flex justify-center">
             <ViewToggle active={active} />
@@ -129,14 +129,14 @@ export default function Navbar({
             <Link
               href={homeHref}
               onClick={closeMenu}
-              className="rounded-md px-3 py-2 font-heading text-sm font-medium hover:bg-neutral-0/10"
+              className="rounded-md px-3 py-2 font-heading text-sm font-medium hover:bg-apricot-100"
             >
               Home
             </Link>
             <Link
               href={demoHref}
               onClick={closeMenu}
-              className="rounded-md px-3 py-2 font-heading text-sm font-medium hover:bg-neutral-0/10"
+              className="rounded-md px-3 py-2 font-heading text-sm font-medium hover:bg-apricot-100"
             >
               Request Demo
             </Link>

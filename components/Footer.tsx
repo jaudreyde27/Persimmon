@@ -22,7 +22,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-apricot-900 text-neutral-0">
+    <footer className="border-t border-apricot-200 bg-apricot-100 text-apricot-900">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <h2 className="font-heading text-2xl font-bold">
@@ -43,11 +43,11 @@ export default function Footer() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 rounded-md border border-neutral-0/30 bg-neutral-0/10 px-4 py-2.5 text-neutral-0 placeholder:text-neutral-0/60 focus:border-apricot-300 focus:outline-none focus:ring-2 focus:ring-apricot-300"
+              className="flex-1 rounded-md border border-apricot-200 bg-neutral-0 px-4 py-2.5 text-apricot-900 placeholder:text-apricot-900/50 focus:border-apricot-500 focus:outline-none focus:ring-2 focus:ring-apricot-300"
             />
             <button
               type="submit"
-              className="rounded-md bg-apricot-600 px-6 py-2.5 font-heading font-medium text-neutral-0 transition-colors hover:bg-apricot-700 focus:outline-none focus:ring-2 focus:ring-apricot-300 focus:ring-offset-2 focus:ring-offset-apricot-900"
+              className="rounded-md bg-apricot-600 px-6 py-2.5 font-heading font-medium text-neutral-0 transition-colors hover:bg-apricot-700 focus:outline-none focus:ring-2 focus:ring-apricot-500 focus:ring-offset-2 focus:ring-offset-apricot-100"
             >
               Subscribe
             </button>
@@ -55,22 +55,22 @@ export default function Footer() {
         </div>
 
         {subscribed && (
-          <p className="mt-3 text-sm text-apricot-200" role="status">
+          <p className="mt-3 text-sm text-apricot-700" role="status">
             Thanks — opening your email client to confirm.
           </p>
         )}
 
-        <div className="mt-10 border-t border-neutral-0/15 pt-6">
-          <p className="text-center text-sm text-neutral-0/90">
+        <div className="mt-10 border-t border-apricot-200 pt-6">
+          <p className="text-center text-sm text-apricot-900/90">
             © 2026 by Persimmon Care Network. &nbsp;|&nbsp;{" "}
-            <Link href="/privacy" className="underline hover:text-apricot-200">
+            <Link href="/privacy" className="underline hover:text-apricot-600">
               Privacy Policy
             </Link>
           </p>
-          <p className="mt-2 text-center text-sm text-neutral-0/70">
+          <p className="mt-2 text-center text-sm text-apricot-900/70">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="hover:text-apricot-200"
+              className="hover:text-apricot-600"
             >
               {CONTACT_EMAIL}
             </a>

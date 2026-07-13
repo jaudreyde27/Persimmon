@@ -18,18 +18,18 @@ function ViewToggle({ active }: { active: "patients" | "providers" }) {
   return (
     <div className="inline-flex items-center gap-1 rounded-full border border-apricot-200 bg-apricot-100 p-1">
       <Link
-        href="/patients"
-        className={`${segment} ${active === "patients" ? activeSeg : inactiveSeg}`}
-        aria-current={active === "patients" ? "page" : undefined}
-      >
-        Patients
-      </Link>
-      <Link
         href="/"
         className={`${segment} ${active === "providers" ? activeSeg : inactiveSeg}`}
         aria-current={active === "providers" ? "page" : undefined}
       >
         Providers
+      </Link>
+      <Link
+        href="/patients"
+        className={`${segment} ${active === "patients" ? activeSeg : inactiveSeg}`}
+        aria-current={active === "patients" ? "page" : undefined}
+      >
+        Patients
       </Link>
     </div>
   );

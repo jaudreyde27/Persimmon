@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaButton from "@/components/CtaButton";
+import TopicsTicker from "@/components/TopicsTicker";
 
 export const metadata: Metadata = {
   title: "For Patients — Persimmon Care Network",
@@ -34,7 +35,9 @@ export default function PatientsPage() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-4xl px-4 pb-24 sm:px-6">
+        <TopicsTicker />
+
+        <div className="mx-auto max-w-4xl px-4 pb-24 pt-16 sm:px-6">
           <div className="overflow-hidden rounded-2xl shadow-sm">
             <Image
               src="/images/patient-cgm-stretch.webp"

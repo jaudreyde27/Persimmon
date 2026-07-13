@@ -39,6 +39,15 @@ const config: Config = {
         heading: ["var(--font-heading)", "Archivo", "sans-serif"],
         body: ["var(--font-body)", "Georgia", "serif"],
       },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 42s linear infinite",
+      },
     },
   },
   plugins: [],

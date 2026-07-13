@@ -32,15 +32,15 @@ export default function PatientsPage() {
             <h1 className="mt-5 font-heading text-4xl font-bold tracking-tight text-apricot-900 sm:text-5xl">
               It&apos;s time to upgrade your care
             </h1>
+            <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-apricot-900 sm:text-2xl">
+              Let&apos;s make diabetes care about you, not about diabetes
+            </p>
             <p className="mx-auto mt-6 max-w-2xl font-body text-lg text-apricot-900/80">
-              No more boilerplate diabetes care.
-              <br />
-              Our program partners with your Endocrinologist (or OB-GYN) to meet
-              you exactly where you are, on what you need.
+              Our program partners with your provider to meet you exactly where
+              you are, on what you need.
               <br />
               From learning the basics to advanced basal/bolus strategies to
-              emotional support from someone who gets it, we&apos;re here to make
-              diabetes care better.
+              emotional support, we&apos;re here to make diabetes care better.
             </p>
             <div className="mt-10">
               <CtaButton href="#contact">Contact us</CtaButton>

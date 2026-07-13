@@ -29,13 +29,14 @@ export default function PatientsPage() {
               For Patients
             </p>
             <h1 className="mt-5 font-heading text-4xl font-bold tracking-tight text-apricot-900 sm:text-5xl">
-              Concierge care, between every visit.
+              It&apos;s time to upgrade your diabetes care
             </h1>
-            <p className="mx-auto mt-6 max-w-xl font-body text-lg text-apricot-900/80">
-              We&apos;re building a dedicated space for the patients we support.
-              In the meantime, if you&apos;d like to learn how Persimmon Care
-              Network works alongside your endocrinology practice, we&apos;d
-              love to hear from you.
+            <p className="mx-auto mt-6 max-w-2xl font-body text-lg text-apricot-900/80">
+              No more boilerplate diabetes care. Our program partners with your
+              Endocrinologist (or OB-GYN) to meet you exactly where you are, on
+              what you need. From learning the basics to advanced strategies to
+              emotional support from someone who gets it, we&apos;re here to make
+              diabetes care better.
             </p>
             <div className="mt-10">
               <CtaButton href="/#contact">Contact us</CtaButton>

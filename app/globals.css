@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fbf7f6; /* neutral-25 */
+  --foreground: #39150c; /* apricot-900 */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-source-serif), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-space-grotesk), Archivo, sans-serif;
+}
+
+/* Offset anchor targets so the sticky nav doesn't overlap section headings */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

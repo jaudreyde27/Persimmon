@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Source_Serif_4 } from "next/font/google";
+import { DM_Sans, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+// Warm, humanist sans for headings/labels — softer than a geometric grotesque.
+const headingFont = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
+  variable: "--font-heading",
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
+const bodyFont = Source_Serif_4({
   subsets: ["latin"],
   weight: ["400", "600"],
-  variable: "--font-source-serif",
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${sourceSerif.variable}`}>
+    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
       <body>{children}</body>
     </html>
   );

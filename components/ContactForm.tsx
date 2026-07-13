@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const CONTACT_EMAIL = "hello@persimmon-clinical.com";
 
-type Status = "idle" | "submitting" | "success" | "error";
+type Status = "idle" | "submitting" | "success" | "emailDraft";
 
 const fieldClasses =
   "w-full rounded-md border border-neutral-100 bg-neutral-0 px-4 py-2.5 font-body text-apricot-900 placeholder:text-apricot-900/40 focus:border-apricot-500 focus:outline-none focus:ring-2 focus:ring-apricot-300";
@@ -22,6 +22,8 @@ export default function ContactForm() {
     const data = Object.fromEntries(new FormData(form).entries());
 
     try {
+      // If a server-side email integration is configured (FORMSPREE_ENDPOINT),
+      // this sends the request silently and we show a success message.
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -33,21 +35,30 @@ export default function ContactForm() {
       setStatus("success");
       form.reset();
     } catch {
-      // Fallback: open the user's email client so no submission is ever lost,
-      // even if the API endpoint is not yet configured.
-      const subject = encodeURIComponent("Request Demo — Persimmon Care Network");
+      // Default behavior with no server integration: open the visitor's email
+      // client with a fully pre-filled message to our team — they just review
+      // and hit send. Nothing is ever lost.
+      const subject = encodeURIComponent(
+        "Request Demo — Persimmon Care Network",
+      );
       const body = encodeURIComponent(
         [
+          "Hello Persimmon Care Network team,",
+          "",
+          "I'd like to learn more. Here are my details:",
+          "",
           `Name: ${data.name ?? ""}`,
           `Email: ${data.email ?? ""}`,
           `Cell Phone: ${data.phone ?? ""}`,
           `Interested in: ${data.interest ?? ""}`,
-          `Heard about us via: ${data.source ?? ""}`,
+          `How I heard about you: ${data.source ?? ""}`,
           `Role: ${data.role ?? ""}`,
+          "",
+          "Thank you!",
         ].join("\n"),
       );
       window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-      setStatus("error");
+      setStatus("emailDraft");
     }
   };
 
@@ -152,9 +163,10 @@ export default function ContactForm() {
           Thank you — we&apos;ve received your request and will be in touch shortly.
         </p>
       )}
-      {status === "error" && (
-        <p className="font-body text-apricot-700" role="status">
-          Opening your email client so you can send us the details directly.
+      {status === "emailDraft" && (
+        <p className="font-body text-denim-600" role="status">
+          We&apos;ve opened a pre-filled email to our team — just review and press
+          send, and we&apos;ll be in touch shortly.
         </p>
       )}
     </form>

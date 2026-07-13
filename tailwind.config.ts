@@ -36,8 +36,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        heading: ["var(--font-space-grotesk)", "Archivo", "sans-serif"],
-        body: ["var(--font-source-serif)", "Georgia", "serif"],
+        heading: ["var(--font-heading)", "Archivo", "sans-serif"],
+        body: ["var(--font-body)", "Georgia", "serif"],
       },
     },
   },

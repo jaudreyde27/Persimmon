@@ -5,7 +5,13 @@ import ContactForm from "@/components/ContactForm";
 
 const realityItems = [
   {
-    title: "Busy schedules drive irregular visits",
+    id: "schedules",
+    body: (
+      <>
+        <strong className="font-semibold">Busy schedules</strong> drive irregular
+        visits
+      </>
+    ),
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
         <circle cx="12" cy="12" r="9" />
@@ -14,8 +20,16 @@ const realityItems = [
     ),
   },
   {
-    title:
-      'Many patients feel a "one size fits all" approach does not work for them',
+    id: "one-size",
+    body: (
+      <>
+        Many patients feel a{" "}
+        <strong className="font-semibold">
+          &ldquo;one size fits all&rdquo; approach does not work
+        </strong>{" "}
+        for them
+      </>
+    ),
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
         <circle cx="12" cy="8" r="4" />
@@ -24,7 +38,10 @@ const realityItems = [
     ),
   },
   {
-    title: "Data rich, but insights only unlocked in office",
+    id: "data",
+    body: (
+      <>Data rich, but insights only unlocked during short visits in office</>
+    ),
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
         <path d="M4 19V5" />
@@ -45,10 +62,16 @@ const steps = [
 ];
 
 const stats = [
-  { value: "+10%", label: "time-in-range improvements" },
+  {
+    value: "+10%",
+    label:
+      "time-in-range improvements when patients are undergoing remote patient monitoring, compared to baseline",
+    color: "text-apricot-600",
+  },
   {
     value: "+$1,000",
-    label: "revenue value / patient from insurance reimbursement",
+    label: "revenue value per patient from insurance reimbursement",
+    color: "text-denim-600",
   },
 ];
 
@@ -81,19 +104,19 @@ export default function Home() {
         <section id="reality" className="bg-neutral-25">
           <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
-              Today, the reality of Type One and Type Two Diabetes care is:
+              Today, the reality of diabetes care (for all types) is:
             </h2>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {realityItems.map((item) => (
                 <div
-                  key={item.title}
+                  key={item.id}
                   className="flex flex-col items-start rounded-2xl border border-neutral-100 bg-neutral-50 p-8"
                 >
-                  <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-apricot-600 text-neutral-0">
+                  <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-denim-500 text-neutral-0">
                     {item.icon}
                   </span>
                   <p className="font-body text-lg text-apricot-900">
-                    {item.title}
+                    {item.body}
                   </p>
                 </div>
               ))}
@@ -155,7 +178,7 @@ export default function Home() {
             <div className="grid gap-12 sm:grid-cols-2">
               {stats.map((stat) => (
                 <div key={stat.value} className="text-center">
-                  <p className="font-heading text-6xl font-bold text-apricot-600 sm:text-7xl">
+                  <p className={`font-heading text-6xl font-bold sm:text-7xl ${stat.color}`}>
                     {stat.value}
                   </p>
                   <p className="mx-auto mt-4 max-w-xs font-body text-lg text-apricot-900/80">
@@ -168,8 +191,11 @@ export default function Home() {
         </section>
 
         {/* Section 6 — CDCES team callout */}
-        <section className="bg-neutral-50">
+        <section className="border-y border-denim-200 bg-denim-100">
           <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
+            <p className="mb-5 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-denim-600">
+              Our care team
+            </p>
             <p className="font-body text-xl leading-relaxed text-apricot-900 sm:text-2xl sm:leading-relaxed">
               Our care is delivered by top-tier Certified Diabetes Education and
               Care Specialists. Our CDCES team are certified CGM and Pump

@@ -123,16 +123,16 @@ export default function Home() {
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
               Today, the reality of diabetes care is:
             </h2>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="mt-8 grid gap-3 sm:mt-12 sm:gap-6 md:grid-cols-3">
               {realityItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col items-start rounded-2xl border border-neutral-100 bg-neutral-50 p-8"
+                  className="flex flex-row items-center gap-4 rounded-2xl border border-neutral-100 bg-neutral-50 p-4 sm:flex-col sm:items-start sm:gap-0 sm:p-8"
                 >
-                  <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-denim-500 text-neutral-0">
+                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-denim-500 text-neutral-0 sm:mb-5 sm:h-12 sm:w-12">
                     {item.icon}
                   </span>
-                  <p className="font-body text-lg text-apricot-900">
+                  <p className="font-body text-base text-apricot-900 sm:text-lg">
                     {item.body}
                   </p>
                 </div>

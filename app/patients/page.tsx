@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaButton from "@/components/CtaButton";
@@ -14,8 +15,8 @@ export default function PatientsPage() {
     <>
       <Navbar active="patients" onProvidersPage={false} />
 
-      <main className="flex min-h-[60vh] items-center bg-apricot-100">
-        <div className="mx-auto max-w-2xl px-4 py-24 text-center sm:px-6">
+      <main className="bg-apricot-100">
+        <div className="mx-auto max-w-2xl px-4 pb-16 pt-24 text-center sm:px-6">
           <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-apricot-600">
             For Patients
           </p>
@@ -30,6 +31,19 @@ export default function PatientsPage() {
           </p>
           <div className="mt-10">
             <CtaButton href="/#contact">Contact us</CtaButton>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-4xl px-4 pb-24 sm:px-6">
+          <div className="overflow-hidden rounded-2xl shadow-sm">
+            <Image
+              src="/images/patient-cgm-stretch.webp"
+              alt="A woman stretching outdoors with a continuous glucose monitor visible on her upper arm"
+              width={920}
+              height={383}
+              className="h-auto w-full object-cover"
+              priority
+            />
           </div>
         </div>
       </main>

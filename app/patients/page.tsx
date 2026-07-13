@@ -35,7 +35,7 @@ export default function PatientsPage() {
             <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-apricot-900 sm:text-2xl">
               Let&apos;s make diabetes care about you, not about diabetes
             </p>
-            <p className="mx-auto mt-6 max-w-2xl font-body text-lg text-apricot-900/80">
+            <p className="mx-auto mt-6 max-w-2xl font-body text-sm text-apricot-900/80 sm:text-lg">
               Our program partners with your provider to meet you exactly where
               you are, on what you need.
               <br />

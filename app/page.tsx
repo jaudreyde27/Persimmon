@@ -28,8 +28,7 @@ const realityItems = [
         <br />
         <strong className="font-semibold">
           &ldquo;one size fits all&rdquo; approach does not work
-        </strong>{" "}
-        for them
+        </strong>
       </>
     ),
     icon: (
@@ -43,11 +42,10 @@ const realityItems = [
     id: "data",
     body: (
       <>
-        Data rich, but{" "}
+        Lots of data, but{" "}
         <strong className="font-semibold">
           insights only unlocked during short visits
-        </strong>{" "}
-        in office
+        </strong>
       </>
     ),
     icon: (
@@ -106,7 +104,7 @@ export default function Home() {
               Concierge Diabetes Care
             </h1>
             <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-apricot-900/80 sm:text-2xl">
-              Creating value for both your patients and your practice.
+              Creating value for your patients and your practice.
             </p>
             <div className="mt-10">
               <CtaButton href="#contact">Schedule an Intro Call</CtaButton>
@@ -121,7 +119,7 @@ export default function Home() {
         <section id="reality" className="bg-neutral-25">
           <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
-              Today, the reality of diabetes care (for all types) is:
+              Today, the reality of diabetes care is:
             </h2>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {realityItems.map((item) => (
@@ -146,7 +144,11 @@ export default function Home() {
           <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
             <p className="font-body text-2xl font-semibold leading-relaxed text-apricot-900 sm:text-3xl sm:leading-relaxed">
               Persimmon Care Network delivers high-touch, bespoke, between-visit
-              care for patients living with all types of diabetes.
+              care for patients living with{" "}
+              <span className="underline decoration-apricot-400 decoration-2 underline-offset-4">
+                all types of diabetes
+              </span>
+              .
             </p>
             <p className="mt-6 font-body text-2xl font-semibold leading-relaxed text-apricot-700 sm:text-3xl sm:leading-relaxed">
               At no extra cost to providers.
@@ -217,7 +219,7 @@ export default function Home() {
             </p>
             <p className="font-body text-xl leading-relaxed text-apricot-900 sm:text-2xl sm:leading-relaxed">
               Our care is delivered by top-tier Certified Diabetes Education and
-              Care Specialists.
+              Care Specialist (CDCES) Registered Nurses.
             </p>
             <p className="mt-5 font-body text-xl leading-relaxed text-apricot-900 sm:text-2xl sm:leading-relaxed">
               Our CDCES team are certified CGM and Pump Trainers, specialized in
@@ -244,8 +246,8 @@ export default function Home() {
         <section id="contact" className="bg-neutral-25">
           <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
-              Interested in exploring more? We&apos;d love to show you what
-              we&apos;re about.
+              Want to see how it could work for your practice? We&apos;d love to
+              show you around.
             </h2>
             <div className="mt-10 rounded-2xl border border-neutral-100 bg-neutral-0 p-6 shadow-sm sm:p-10">
               <ContactForm />

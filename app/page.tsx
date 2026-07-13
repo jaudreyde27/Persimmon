@@ -27,7 +27,9 @@ const realityItems = [
         Many patients feel
         <br />
         <strong className="font-semibold">
-          &ldquo;one size fits all&rdquo; approach does not work
+          &ldquo;one size fits all&rdquo; approach
+          <br />
+          does not work
         </strong>
       </>
     ),
@@ -98,13 +100,13 @@ export default function Home() {
           />
           <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-32">
             <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-apricot-600">
-              Remote Patient Monitoring
+              Remote Patient Monitoring and Support
             </p>
             <h1 className="mt-5 font-heading text-4xl font-bold tracking-tight text-apricot-900 sm:text-6xl">
               Concierge Diabetes Care
             </h1>
             <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-apricot-900/80 sm:text-2xl">
-              Creating value for your patients and your practice.
+              Creating value for you and your patients.
             </p>
             <div className="mt-10">
               <CtaButton href="#contact">Schedule an Intro Call</CtaButton>

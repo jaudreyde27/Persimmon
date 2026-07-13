@@ -23,7 +23,8 @@ const realityItems = [
     id: "one-size",
     body: (
       <>
-        Many patients feel a{" "}
+        Many patients feel
+        <br />
         <strong className="font-semibold">
           &ldquo;one size fits all&rdquo; approach does not work
         </strong>{" "}
@@ -40,7 +41,13 @@ const realityItems = [
   {
     id: "data",
     body: (
-      <>Data rich, but insights only unlocked during short visits in office</>
+      <>
+        Data rich, but{" "}
+        <strong className="font-semibold">
+          insights only unlocked during short visits
+        </strong>{" "}
+        in office
+      </>
     ),
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
@@ -53,7 +60,7 @@ const realityItems = [
 ];
 
 const steps = [
-  "We enroll your patient into Persimmon Care Network.",
+  "We enroll your patients into your Persimmon Care Program.",
   "Device data flows automatically into our dashboard.",
   "Your dedicated CDCES reviews patient data each month.",
   "The CDCES calls your patients monthly, between endo visits.",
@@ -70,7 +77,7 @@ const stats = [
   },
   {
     value: "+$1,000",
-    label: "revenue value per patient from insurance reimbursement",
+    label: "per patient from insurance reimbursement",
     color: "text-denim-600",
   },
 ];
@@ -86,7 +93,7 @@ export default function Home() {
         <section className="bg-apricot-100">
           <div className="mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-32">
             <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-apricot-600">
-              Concierge Diabetes Care
+              Remote Patient Monitoring
             </p>
             <h1 className="mt-5 font-heading text-4xl font-bold tracking-tight text-apricot-900 sm:text-6xl">
               Concierge Diabetes Care
@@ -128,9 +135,11 @@ export default function Home() {
         <section className="bg-apricot-100">
           <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
             <p className="font-body text-2xl font-semibold leading-relaxed text-apricot-900 sm:text-3xl sm:leading-relaxed">
-              Persimmon Care Network partners with Endocrinology practices to
-              deliver high-touch, bespoke, between-visit care for patients living
-              with all types of diabetes — at no extra cost to the provider.
+              Persimmon Care Network delivers high-touch, bespoke, between-visit
+              care for patients living with all types of diabetes.
+            </p>
+            <p className="mt-6 font-body text-2xl font-semibold leading-relaxed text-apricot-700 sm:text-3xl sm:leading-relaxed">
+              At no extra cost to providers.
             </p>
           </div>
         </section>
@@ -198,10 +207,12 @@ export default function Home() {
             </p>
             <p className="font-body text-xl leading-relaxed text-apricot-900 sm:text-2xl sm:leading-relaxed">
               Our care is delivered by top-tier Certified Diabetes Education and
-              Care Specialists. Our CDCES team are certified CGM and Pump
-              Trainers, specialized in Type One, Type Two, and Gestational
-              Diabetes, and here to support patients on mental and physical health
-              topics.
+              Care Specialists.
+            </p>
+            <p className="mt-5 font-body text-xl leading-relaxed text-apricot-900 sm:text-2xl sm:leading-relaxed">
+              Our CDCES team are certified CGM and Pump Trainers, specialized in
+              Type One, Type Two, and Gestational Diabetes, and here to support
+              patients on mental and physical health topics.
             </p>
           </div>
         </section>

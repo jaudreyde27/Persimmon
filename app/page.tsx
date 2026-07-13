@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaButton from "@/components/CtaButton";
 import ContactForm from "@/components/ContactForm";
+import HeroVideo from "@/components/HeroVideo";
 
 const realityItems = [
   {
@@ -90,8 +91,14 @@ export default function Home() {
 
       <main>
         {/* Section 1 — Hero */}
-        <section className="bg-apricot-100">
-          <div className="mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-apricot-100">
+          <HeroVideo />
+          {/* Apricot wash keeps the video very subtle beneath the hero color */}
+          <div
+            className="absolute inset-0 bg-apricot-100/70"
+            aria-hidden="true"
+          />
+          <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-32">
             <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-apricot-600">
               Remote Patient Monitoring
             </p>
@@ -104,6 +111,9 @@ export default function Home() {
             <div className="mt-10">
               <CtaButton href="#contact">Schedule an Intro Call</CtaButton>
             </div>
+            <p className="mx-auto mt-6 max-w-xl font-body text-base text-apricot-900/70 sm:text-lg">
+              Explicitly built for Type One, Type Two, and Gestational Diabetes
+            </p>
           </div>
         </section>
 

@@ -44,7 +44,7 @@ const realityItems = [
     id: "data",
     body: (
       <>
-        Lots of data, but{" "}
+        Lots of sensor data, but{" "}
         <strong className="font-semibold">
           insights only unlocked during short visits
         </strong>
@@ -73,12 +73,12 @@ const stats = [
   {
     value: "+10%",
     label:
-      "time-in-range improvements when patients are undergoing remote patient monitoring, compared to baseline",
+      "time-in-range improvements through remote patient monitoring, compared to baseline",
     color: "text-apricot-600",
   },
   {
     value: "+$1,000",
-    label: "per patient from insurance reimbursement",
+    label: "approx. per patient from insurance reimbursement",
     color: "text-denim-600",
   },
 ];

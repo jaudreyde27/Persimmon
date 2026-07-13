@@ -71,7 +71,7 @@ const steps = [
 
 const stats = [
   {
-    value: "+10%",
+    value: "+8-15%",
     label:
       "time-in-range improvements through remote patient monitoring, compared to baseline",
     color: "text-apricot-600",

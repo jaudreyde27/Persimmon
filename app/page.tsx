@@ -98,7 +98,7 @@ export default function Home() {
             className="absolute inset-0 bg-apricot-100/70"
             aria-hidden="true"
           />
-          <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-32">
+          <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-32">
             <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-apricot-600">
               Remote Patient Monitoring and Support
             </p>
@@ -119,7 +119,7 @@ export default function Home() {
 
         {/* Section 2 — The reality today */}
         <section id="reality" className="bg-neutral-25">
-          <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
               Today, the reality of diabetes care is:
             </h2>
@@ -143,7 +143,7 @@ export default function Home() {
 
         {/* Section 3 — Partnership callout */}
         <section className="bg-apricot-100">
-          <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
+          <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 sm:py-20">
             <p className="font-body text-2xl font-semibold leading-relaxed text-apricot-900 sm:text-3xl sm:leading-relaxed">
               Persimmon Care Network delivers high-touch, bespoke, between-visit
               care for patients living with{" "}
@@ -160,20 +160,23 @@ export default function Home() {
 
         {/* Section 4 — How it works */}
         <section id="how-it-works" className="bg-neutral-25">
-          <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
             <h2 className="text-center font-heading text-3xl font-bold text-apricot-900 sm:text-4xl">
               How it works
             </h2>
-            <ol className="mt-14 grid gap-x-6 gap-y-10 md:grid-cols-3">
+            <ol className="mt-8 grid gap-x-6 gap-y-5 sm:mt-14 md:grid-cols-3 md:gap-y-10">
               {steps.map((step, i) => (
-                <li key={i} className="relative flex flex-col items-center text-center">
+                <li
+                  key={i}
+                  className="relative flex flex-row items-center gap-4 text-left md:flex-col md:items-center md:gap-0 md:text-center"
+                >
                   <span
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-apricot-600 font-heading text-xl font-bold text-neutral-0"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-apricot-600 font-heading text-xl font-bold text-neutral-0 md:h-14 md:w-14"
                     aria-hidden="true"
                   >
                     {i + 1}
                   </span>
-                  <p className="mt-5 max-w-xs font-body text-lg text-apricot-900">
+                  <p className="font-body text-base text-apricot-900 sm:text-lg md:mt-5 md:max-w-xs">
                     <span className="sr-only">{`Step ${i + 1}: `}</span>
                     {step}
                   </p>
@@ -197,8 +200,8 @@ export default function Home() {
 
         {/* Section 5 — Big-number callouts */}
         <section className="bg-apricot-100">
-          <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
-            <div className="grid gap-12 sm:grid-cols-2">
+          <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
+            <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
               {stats.map((stat) => (
                 <div key={stat.value} className="text-center">
                   <p className={`font-heading text-6xl font-bold sm:text-7xl ${stat.color}`}>
@@ -215,7 +218,7 @@ export default function Home() {
 
         {/* Section 6 — CDCES team callout */}
         <section className="border-y border-denim-200 bg-denim-100">
-          <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
+          <div className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 sm:py-20">
             <p className="mb-5 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-denim-600">
               Our care team
             </p>
@@ -233,7 +236,7 @@ export default function Home() {
 
         {/* Section 7 — Closing CTA */}
         <section className="bg-apricot-200">
-          <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6">
+          <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-24">
             <p className="font-body text-3xl font-semibold leading-snug text-apricot-900 sm:text-4xl sm:leading-snug">
               Give your patients the attention they deserve, while unlocking
               additional value for your practice.
@@ -246,7 +249,7 @@ export default function Home() {
 
         {/* Section 8 — Contact / Request Demo */}
         <section id="contact" className="bg-neutral-25">
-          <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+          <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
               Want to see how it could work for your practice? We&apos;d love to
               show you around.

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CtaButton from "@/components/CtaButton";
 import TopicsTicker from "@/components/TopicsTicker";
 import HeroImage from "@/components/HeroImage";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "For Patients — Persimmon Care Network",
@@ -29,22 +30,36 @@ export default function PatientsPage() {
               For Patients
             </p>
             <h1 className="mt-5 font-heading text-4xl font-bold tracking-tight text-apricot-900 sm:text-5xl">
-              It&apos;s time to upgrade your diabetes care
+              It&apos;s time to upgrade your care
             </h1>
             <p className="mx-auto mt-6 max-w-2xl font-body text-lg text-apricot-900/80">
-              No more boilerplate diabetes care. Our program partners with your
-              Endocrinologist (or OB-GYN) to meet you exactly where you are, on
-              what you need. From learning the basics to advanced strategies to
+              No more boilerplate diabetes care.
+              <br />
+              Our program partners with your Endocrinologist (or OB-GYN) to meet
+              you exactly where you are, on what you need.
+              <br />
+              From learning the basics to advanced basal/bolus strategies to
               emotional support from someone who gets it, we&apos;re here to make
               diabetes care better.
             </p>
             <div className="mt-10">
-              <CtaButton href="/#contact">Contact us</CtaButton>
+              <CtaButton href="#contact">Contact us</CtaButton>
             </div>
           </div>
         </section>
 
         <TopicsTicker />
+
+        <section id="contact" className="bg-neutral-25">
+          <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+            <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
+              Ready to get started? We&apos;d love to hear from you.
+            </h2>
+            <div className="mt-10 rounded-2xl border border-neutral-100 bg-neutral-0 p-6 shadow-sm sm:p-10">
+              <ContactForm />
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

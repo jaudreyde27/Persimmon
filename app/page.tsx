@@ -103,10 +103,10 @@ export default function Home() {
               Remote Patient Monitoring and Support
             </p>
             <h1 className="mt-5 font-heading text-4xl font-bold tracking-tight text-apricot-900 sm:text-6xl">
-              Concierge Diabetes Care
+              Give your patients comprehensive diabetes care
             </h1>
             <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-apricot-900/80 sm:text-2xl">
-              Give your patients comprehensive diabetes care.
+              Creating value for you and your patients.
             </p>
             <div className="mt-10">
               <CtaButton href="#contact">Schedule an Intro Call</CtaButton>

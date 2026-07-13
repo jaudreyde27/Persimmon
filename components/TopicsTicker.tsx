@@ -75,7 +75,7 @@ export default function TopicsTicker() {
     <div
       role="region"
       aria-label="Topics we cover"
-      className="relative overflow-hidden bg-neutral-25 py-10 sm:py-14"
+      className="relative overflow-hidden bg-neutral-25 pb-10 pt-6 sm:pb-14 sm:pt-8"
     >
       <div
         className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-neutral-25 to-transparent sm:w-24"

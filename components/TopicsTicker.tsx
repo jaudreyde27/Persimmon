@@ -12,15 +12,17 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const badgeColors = ["bg-apricot-100", "bg-apricot-200", "bg-apricot-300", "bg-apricot-400"];
+// Alternating two-tone rhythm — clean light/deeper pattern rather than a
+// four-step ramp that reads as random light-vs-dark badges.
+const badgeColors = ["bg-apricot-100", "bg-apricot-200"];
 
 const topics: { label: string; Icon: LucideIcon }[] = [
-  { label: "Understanding your CGM trends", Icon: LineChart },
-  { label: "Carb counting and pre-bolusing", Icon: Utensils },
+  { label: "Actionable insights from your CGM trends", Icon: LineChart },
+  { label: "Carb counting, pre-bolusing, split bolusing", Icon: Utensils },
   { label: "Pump tech education and training", Icon: Smartphone },
   { label: "Making diabetes fit your lifestyle", Icon: PersonStanding },
   { label: "Diabetes distress & mental health support", Icon: HeartHandshake },
-  { label: "Life changes and new routines", Icon: CalendarCheck },
+  { label: "Life changes and adapting diabetes to new routines", Icon: CalendarCheck },
   { label: "Collaborative support following hypos", Icon: MessagesSquare },
   { label: "Balancing exercise, sleep & stress w/ diabetes", Icon: Scale },
   { label: "Tactical coaching for moms-to-be", Icon: Baby },

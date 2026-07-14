@@ -147,7 +147,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="organization" className={labelClasses}>
-          Organization
+          {role === "Patient" ? "Provider Organization" : "Organization"}
         </label>
         <input
           id="organization"

@@ -48,7 +48,7 @@ export default function PatientsPage() {
           </div>
         </section>
 
-        <TopicsTicker title="Topics Persimmon Care is here to support you on" />
+        <TopicsTicker title="Topics we're here to support on" />
 
         <section id="contact" className="bg-neutral-25">
           <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">

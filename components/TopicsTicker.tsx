@@ -9,6 +9,7 @@ import {
   Scale,
   Baby,
   BookOpen,
+  MoreHorizontal,
   type LucideIcon,
 } from "lucide-react";
 
@@ -27,6 +28,7 @@ const topics: { label: string; Icon: LucideIcon }[] = [
   { label: "Balancing exercise, sleep & stress w/ diabetes", Icon: Scale },
   { label: "Tactical coaching for moms-to-be", Icon: Baby },
   { label: "Education for the newly diagnosed", Icon: BookOpen },
+  { label: "And more", Icon: MoreHorizontal },
 ];
 
 function TicketRow({
@@ -93,9 +95,15 @@ export default function TopicsTicker({ title }: { title?: string }) {
       </div>
 
       {title && (
-        <h2 className="mx-auto mt-8 max-w-3xl px-4 text-center font-heading text-2xl font-bold text-apricot-900 sm:mt-10 sm:text-3xl">
-          {title}
-        </h2>
+        <div className="mx-auto mt-8 max-w-3xl px-4 sm:mt-10">
+          <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
+            {title}
+          </h2>
+          <div
+            className="mx-auto mt-5 h-1 w-16 rounded-full bg-apricot-400"
+            aria-hidden="true"
+          />
+        </div>
       )}
     </section>
   );

@@ -44,6 +44,9 @@ export default function PatientsPage() {
             <div className="mt-7">
               <CtaButton href="#contact">Contact us</CtaButton>
             </div>
+            <p className="mx-auto mt-6 max-w-xl font-body text-base text-apricot-900/70 sm:text-lg">
+              For Type One, Type Two, and Gestational Diabetes
+            </p>
           </div>
         </section>
 

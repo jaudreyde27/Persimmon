@@ -112,14 +112,14 @@ export default function Home() {
               <CtaButton href="#contact">Schedule an Intro Call</CtaButton>
             </div>
             <p className="mx-auto mt-6 max-w-xl font-body text-base text-apricot-900/70 sm:text-lg">
-              Explicitly built for Type One, Type Two, and Gestational Diabetes
+              For Type One, Type Two, and Gestational Diabetes
             </p>
           </div>
         </section>
 
         {/* Section 2 — The reality today */}
         <section id="reality" className="bg-neutral-25">
-          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+          <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20">
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
               Today, the reality of diabetes care is:
             </h2>

@@ -18,7 +18,7 @@ export default function Wordmark({ href = "/", className = "" }: WordmarkProps) 
     >
       <svg
         viewBox="24 18 72 94"
-        className="h-10 w-auto shrink-0 sm:h-11"
+        className="h-11 w-auto shrink-0 sm:h-12"
         aria-hidden="true"
       >
         <circle

@@ -75,9 +75,9 @@ export default function Navbar({
           </Link>
           <Link
             href={demoHref}
-            className="font-heading text-sm font-medium text-apricot-900 hover:text-apricot-600"
+            className="rounded-full bg-denim-500 px-4 py-2 font-heading text-sm font-semibold text-neutral-0 transition-colors hover:bg-denim-600"
           >
-            Request Demo
+            Schedule Intro Call
           </Link>
         </div>
 
@@ -136,9 +136,9 @@ export default function Navbar({
             <Link
               href={demoHref}
               onClick={closeMenu}
-              className="rounded-md px-3 py-2 font-heading text-sm font-medium hover:bg-apricot-100"
+              className="mt-2 rounded-full bg-denim-500 px-4 py-2.5 text-center font-heading text-sm font-semibold text-neutral-0 transition-colors hover:bg-denim-600"
             >
-              Request Demo
+              Schedule Intro Call
             </Link>
           </div>
         </div>

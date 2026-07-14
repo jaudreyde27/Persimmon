@@ -36,11 +36,10 @@ export default function PatientsPage() {
               Let&apos;s make diabetes care about you, not about diabetes
             </p>
             <p className="mx-auto mt-4 max-w-2xl font-body text-sm text-apricot-900/80 sm:text-lg">
-              Our program partners with your provider to meet you exactly where
-              you are, on what you need.
+              Our program meets patients where you are, on what you need.
               <br />
-              From learning the basics to advanced basal/bolus strategies to
-              emotional support, we&apos;re here to make diabetes care better.
+              From learning the basics to advanced strategies to emotional
+              support, we&apos;re here to make diabetes care better.
             </p>
             <div className="mt-7">
               <CtaButton href="#contact">Contact us</CtaButton>

@@ -229,11 +229,7 @@ export default function Home() {
             <p className="mt-5 font-body text-xl leading-relaxed text-apricot-900 sm:text-2xl sm:leading-relaxed">
               Our CDCES team are certified CGM and Pump Trainers,
               <br />
-              specialized in Type One,
-              <br />
-              Type Two,
-              <br />
-              and Gestational Diabetes,
+              specialized in Type One, Type Two, and Gestational Diabetes,
               <br />
               and here to support patients on mental and physical health topics.
             </p>

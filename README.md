@@ -65,15 +65,15 @@ The two **"Schedule an Intro Call"** CTAs currently anchor to the contact form
 
 The Request Demo form (fields: Name, Email, Role, Organization) posts to
 [`app/api/contact/route.ts`](./app/api/contact/route.ts), which emails each
-submission **silently** to **hello@persimmon-clinical.com** — the visitor just
+submission **silently** to **hello@persimmon-care.com** — the visitor just
 presses Submit; no email client opens on their side.
 
 Configure **one** provider (see [`.env.example`](./.env.example)):
 
 - **Web3Forms (no account, recommended):** create an Access Key at
-  [web3forms.com](https://web3forms.com) for `hello@persimmon-clinical.com`,
+  [web3forms.com](https://web3forms.com) for `hello@persimmon-care.com`,
   then set `WEB3FORMS_ACCESS_KEY`.
-- **Formspree:** create a form pointed at `hello@persimmon-clinical.com`, then
+- **Formspree:** create a form pointed at `hello@persimmon-care.com`, then
   set `FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxx`.
 
 Set it locally by copying `.env.example` to `.env.local`, or on Vercel under

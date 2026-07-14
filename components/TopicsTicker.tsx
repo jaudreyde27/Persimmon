@@ -70,26 +70,33 @@ function TicketRow({
  * the duplicate row is hidden from assistive tech and dropped entirely under
  * prefers-reduced-motion, leaving a single static wrapped grid.
  */
-export default function TopicsTicker() {
+export default function TopicsTicker({ title }: { title?: string }) {
   return (
-    <div
-      role="region"
+    <section
       aria-label="Topics we cover"
-      className="relative overflow-hidden bg-neutral-25 pb-10 pt-6 sm:pb-14 sm:pt-8"
+      className="bg-neutral-25 pb-10 pt-6 sm:pb-14 sm:pt-8"
     >
-      <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-neutral-25 to-transparent sm:w-24"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-neutral-25 to-transparent sm:w-24"
-        aria-hidden="true"
-      />
+      <div className="relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-neutral-25 to-transparent sm:w-24"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-neutral-25 to-transparent sm:w-24"
+          aria-hidden="true"
+        />
 
-      <div className="flex w-max animate-marquee motion-reduce:w-full motion-reduce:animate-none">
-        <TicketRow />
-        <TicketRow ariaHidden className="motion-reduce:hidden" />
+        <div className="flex w-max animate-marquee motion-reduce:w-full motion-reduce:animate-none">
+          <TicketRow />
+          <TicketRow ariaHidden className="motion-reduce:hidden" />
+        </div>
       </div>
-    </div>
+
+      {title && (
+        <h2 className="mx-auto mt-8 max-w-3xl px-4 text-center font-heading text-2xl font-bold text-apricot-900 sm:mt-10 sm:text-3xl">
+          {title}
+        </h2>
+      )}
+    </section>
   );
 }

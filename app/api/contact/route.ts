@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 /**
  * Contact / Request Demo form handler.
  *
- * Submissions are emailed to hello@persimmon-clinical.com — silently, with no
+ * Submissions are emailed to hello@persimmon-care.com — silently, with no
  * email client opening on the visitor's side. They just press Submit.
  *
  * ── HOW TO TURN IT ON (pick ONE, ~2 minutes) ─────────────────────────
  *
  * Option A — Web3Forms (no account needed, recommended):
- *   1. Go to https://web3forms.com, enter hello@persimmon-clinical.com,
+ *   1. Go to https://web3forms.com, enter hello@persimmon-care.com,
  *      and click the verification link they email you.
  *   2. Copy your Access Key.
  *   3. Set the environment variable (Vercel → Settings → Environment Variables,
@@ -18,7 +18,7 @@ import { NextResponse } from "next/server";
  *
  * Option B — Formspree (free account):
  *   1. Create a form at https://formspree.io pointed at
- *      hello@persimmon-clinical.com.
+ *      hello@persimmon-care.com.
  *   2. Set:  FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxx
  *
  * Until one of these is set, the route returns 502 and the form shows a
@@ -26,7 +26,7 @@ import { NextResponse } from "next/server";
  * ─────────────────────────────────────────────────────────────────────
  */
 
-const CONTACT_EMAIL = "hello@persimmon-clinical.com";
+const CONTACT_EMAIL = "hello@persimmon-care.com";
 
 export async function POST(request: Request) {
   let data: Record<string, unknown>;

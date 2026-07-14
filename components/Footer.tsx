@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const CONTACT_EMAIL = "hello@persimmon-clinical.com";
+const CONTACT_EMAIL = "hello@persimmon-care.com";
 
 export default function Footer() {
   return (

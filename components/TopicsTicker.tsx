@@ -95,10 +95,10 @@ export default function TopicsTicker({ title }: { title?: string }) {
       </div>
 
       {title && (
-        <div className="mx-auto mt-8 max-w-3xl px-4 sm:mt-10">
-          <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
+        <div className="mx-auto mt-8 max-w-2xl px-4 sm:mt-10">
+          <p className="text-center font-body text-lg font-semibold leading-relaxed text-apricot-900 sm:text-xl sm:leading-relaxed">
             {title}
-          </h2>
+          </p>
           <div
             className="mx-auto mt-5 h-1 w-16 rounded-full bg-apricot-400"
             aria-hidden="true"

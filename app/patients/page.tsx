@@ -35,12 +35,6 @@ export default function PatientsPage() {
             <p className="mx-auto mt-4 max-w-2xl font-body text-lg text-apricot-900 sm:text-2xl">
               Let&apos;s make diabetes care about you, not about diabetes
             </p>
-            <p className="mx-auto mt-4 max-w-2xl font-body text-sm text-apricot-900/80 sm:text-lg">
-              Our program meets patients where you are, on what you need.
-              <br />
-              From learning the basics to advanced strategies to emotional
-              support, we&apos;re here to make diabetes care better.
-            </p>
             <div className="mt-7">
               <CtaButton href="#contact">Contact us</CtaButton>
             </div>
@@ -50,9 +44,9 @@ export default function PatientsPage() {
           </div>
         </section>
 
-        <TopicsTicker title="Topics we're here to support on" />
+        <TopicsTicker title="Our program meets patients where you are, on what you need. From learning the basics to advanced strategies to emotional support, we're here to make diabetes care better." />
 
-        <section id="contact" className="bg-neutral-25">
+        <section id="contact" className="bg-apricot-100">
           <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
             <h2 className="text-center font-heading text-2xl font-bold text-apricot-900 sm:text-3xl">
               Want your provider to adopt Persimmon Care? Drop us a note here.

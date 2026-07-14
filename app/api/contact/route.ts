@@ -78,7 +78,11 @@ export async function POST(request: Request) {
           organization,
         }),
       });
-      if (!res.ok) throw new Error(`Web3Forms responded ${res.status}`);
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        console.error(`Web3Forms responded ${res.status}: ${body}`);
+        throw new Error(`Web3Forms responded ${res.status}`);
+      }
       return NextResponse.json({ ok: true });
     }
 
@@ -100,11 +104,18 @@ export async function POST(request: Request) {
           organization,
         }),
       });
-      if (!res.ok) throw new Error(`Formspree responded ${res.status}`);
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        console.error(`Formspree responded ${res.status}: ${body}`);
+        throw new Error(`Formspree responded ${res.status}`);
+      }
       return NextResponse.json({ ok: true });
     }
 
     // No email provider configured yet.
+    console.error(
+      "Contact form: no email provider configured (WEB3FORMS_ACCESS_KEY / FORMSPREE_ENDPOINT both unset).",
+    );
     return NextResponse.json(
       {
         error:
@@ -113,7 +124,8 @@ export async function POST(request: Request) {
       },
       { status: 502 },
     );
-  } catch {
+  } catch (err) {
+    console.error("Contact form delivery failed:", err);
     return NextResponse.json(
       { error: "Failed to deliver your request. Please try again." },
       { status: 502 },

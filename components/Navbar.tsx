@@ -129,7 +129,7 @@ export default function Navbar({
             <Link
               href={homeHref}
               onClick={closeMenu}
-              className="rounded-md px-3 py-2 font-heading text-sm font-medium hover:bg-apricot-100"
+              className="rounded-md px-3 py-2 text-center font-heading text-sm font-medium hover:bg-apricot-100"
             >
               Home
             </Link>

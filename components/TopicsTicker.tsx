@@ -26,7 +26,7 @@ const topics: { label: string; Icon: LucideIcon }[] = [
   { label: "Life changes and adapting diabetes to new routines", Icon: CalendarCheck },
   { label: "Collaborative support following hypos", Icon: MessagesSquare },
   { label: "Balancing exercise, sleep & stress w/ diabetes", Icon: Scale },
-  { label: "Tactical coaching for moms-to-be", Icon: Baby },
+  { label: "Guidance for moms-to-be", Icon: Baby },
   { label: "Education for the newly diagnosed", Icon: BookOpen },
   { label: "And more", Icon: MoreHorizontal },
 ];

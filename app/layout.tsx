@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Source_Serif_4 } from "next/font/google";
+import { DM_Sans, Source_Serif_4, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
 // Warm, humanist sans for headings/labels — softer than a geometric grotesque.
@@ -14,6 +14,14 @@ const bodyFont = Source_Serif_4({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-body",
+  display: "swap",
+});
+
+// Brand wordmark font (used only in the logo).
+const logoFont = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-logo",
   display: "swap",
 });
 
@@ -58,7 +66,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
+    <html
+      lang="en"
+      className={`${headingFont.variable} ${bodyFont.variable} ${logoFont.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

@@ -62,7 +62,7 @@ export default function Navbar({
         className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6"
         aria-label="Primary"
       >
-        <Wordmark variant="light" />
+        <Wordmark />
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-6 md:flex">

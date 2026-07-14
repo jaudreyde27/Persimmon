@@ -1,30 +1,58 @@
 import Link from "next/link";
 
 type WordmarkProps = {
-  /** "dark" for use on dark bars (white text); "light" for light backgrounds (apricot-900 text). */
-  variant?: "dark" | "light";
   href?: string;
   className?: string;
 };
 
 /**
- * Text wordmark: "Persimmon Care Network" with "Care" always in apricot-500.
- * The remaining words are white on dark bars, apricot-900 on light backgrounds.
+ * Persimmon Care Network brand logo: the persimmon mark (apricot circle with a
+ * denim calyx) beside the stacked "Persimmon / Care Network" wordmark.
  */
-export default function Wordmark({
-  variant = "dark",
-  href = "/",
-  className = "",
-}: WordmarkProps) {
-  const baseColor = variant === "dark" ? "text-neutral-0" : "text-apricot-900";
-
+export default function Wordmark({ href = "/", className = "" }: WordmarkProps) {
   return (
     <Link
       href={href}
-      className={`font-heading text-lg font-bold tracking-tight sm:text-xl ${baseColor} ${className}`}
+      className={`inline-flex items-center gap-2 ${className}`}
       aria-label="Persimmon Care Network — home"
     >
-      Persimmon <span className="text-apricot-500">Care</span> Network
+      <svg
+        viewBox="24 18 72 94"
+        className="h-9 w-auto shrink-0 sm:h-10"
+        aria-hidden="true"
+      >
+        <circle
+          cx="60"
+          cy="76"
+          r="31"
+          fill="none"
+          stroke="#cb6b3f"
+          strokeWidth="7"
+        />
+        <g fill="#345b6f">
+          <path d="M60 42C55 37 55 27 60 23C65 27 65 37 60 42Z" />
+          <path
+            d="M60 42C55 37 55 27 60 23C65 27 65 37 60 42Z"
+            transform="rotate(90 60 42)"
+          />
+          <path
+            d="M60 42C55 37 55 27 60 23C65 27 65 37 60 42Z"
+            transform="rotate(180 60 42)"
+          />
+          <path
+            d="M60 42C55 37 55 27 60 23C65 27 65 37 60 42Z"
+            transform="rotate(270 60 42)"
+          />
+        </g>
+      </svg>
+      <span className="flex flex-col font-logo leading-none">
+        <span className="text-xl font-semibold -tracking-[0.02em] text-apricot-700 sm:text-2xl">
+          Persimmon
+        </span>
+        <span className="mt-0.5 text-[11px] font-semibold tracking-wide text-denim-600 sm:text-xs">
+          Care Network
+        </span>
+      </span>
     </Link>
   );
 }

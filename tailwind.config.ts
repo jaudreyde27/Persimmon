@@ -38,6 +38,7 @@ const config: Config = {
       fontFamily: {
         heading: ["var(--font-heading)", "Archivo", "sans-serif"],
         body: ["var(--font-body)", "Georgia", "serif"],
+        logo: ["var(--font-logo)", "IBM Plex Sans", "sans-serif"],
       },
       keyframes: {
         marquee: {

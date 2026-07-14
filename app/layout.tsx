@@ -17,10 +17,30 @@ const bodyFont = Source_Serif_4({
   display: "swap",
 });
 
+const SITE_URL = "https://persimmon-care.com";
+const SITE_NAME = "Persimmon Care Network";
+const SITE_DESCRIPTION =
+  "Comprehensive diabetes care — remote patient monitoring and high-touch, between-visit support, partnering with your practice at no extra cost to providers.";
+
 export const metadata: Metadata = {
-  title: "Persimmon Care Network — Concierge Diabetes Care",
-  description:
-    "Persimmon Care Network partners with endocrinology practices to deliver high-touch, bespoke, between-visit care for patients living with all types of diabetes — at no extra cost to the provider.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: "%s — Persimmon Care Network",
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

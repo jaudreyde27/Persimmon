@@ -7,7 +7,7 @@ import HeroImage from "@/components/HeroImage";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "For Patients — Persimmon Care Network",
+  title: "For Patients",
   description:
     "Concierge, between-visit diabetes support for patients. More coming soon.",
 };

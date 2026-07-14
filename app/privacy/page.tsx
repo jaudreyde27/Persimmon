@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Persimmon Care Network",
+  title: "Privacy Policy",
   description: "Privacy Policy for Persimmon Care Network.",
 };
 

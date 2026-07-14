@@ -13,12 +13,12 @@ export default function Wordmark({ href = "/", className = "" }: WordmarkProps) 
   return (
     <Link
       href={href}
-      className={`inline-flex items-center gap-2 ${className}`}
+      className={`inline-flex items-center gap-2.5 ${className}`}
       aria-label="Persimmon Care Network — home"
     >
       <svg
         viewBox="24 18 72 94"
-        className="h-9 w-auto shrink-0 sm:h-10"
+        className="h-10 w-auto shrink-0 sm:h-11"
         aria-hidden="true"
       >
         <circle
@@ -46,10 +46,10 @@ export default function Wordmark({ href = "/", className = "" }: WordmarkProps) 
         </g>
       </svg>
       <span className="flex flex-col font-logo leading-none">
-        <span className="text-xl font-semibold -tracking-[0.02em] text-apricot-700 sm:text-2xl">
+        <span className="text-[22px] font-semibold -tracking-[0.023em] text-apricot-700 sm:text-2xl">
           Persimmon
         </span>
-        <span className="mt-0.5 text-[11px] font-semibold tracking-wide text-denim-600 sm:text-xs">
+        <span className="mt-[3px] text-[13px] font-semibold tracking-normal text-denim-600 sm:text-sm">
           Care Network
         </span>
       </span>
